@@ -16,6 +16,10 @@ Example hello-world k8s deployment using helm
 * Docker image adds `requirements.txt` before app to take advantage of layer caching for dependencies
 * Image uses a non-root user
 
+## To Do
+
+* Add CI/CD pipeline
+
 ## Usage
 
 * Print out manifests
