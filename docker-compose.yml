@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    image: ${PROJECT}/${SERVICE}:${BUILD_TAG}
+    container_name: ${SERVICE}
+    tty: true
+    ports:
+      - 5000:5000
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT}

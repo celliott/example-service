@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+{{ include "service.labels" . | indent 4 }}
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: {{ .Values.service.port }}
+  selector:
+    app.kubernetes.io/name: {{ include "service.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}

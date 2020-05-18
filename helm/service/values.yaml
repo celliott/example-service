@@ -1,0 +1,28 @@
+# Default values for service.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+autoscaling:
+  type: memory
+  minReplicas: 1
+  maxReplicas: 10
+  targetAverageUtilization: 80
+
+ingress:
+  scheme: internet-facing #internet-facing, none, or internal
+  certArn: arn:aws:acm:us-east-1:687531305034:certificate/2d67ee2d-ee73-470a-a7e9-bd428b32f59d
+  domain: company.com
+
+nodeSelector:
+  node-type: general
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 64Mi
+  requests:
+    cpu: 100m
+    memory: 64Mi
+
+service:
+  port: 3000
