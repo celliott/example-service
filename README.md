@@ -38,7 +38,7 @@ $ make helm-deploy
 
 * In your browser, visit https://hello-world.dev.company.com
 
-* Delete k8s deployment
+#### Delete k8s deployment
 
 ```
 $ make helm-delete
